@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 html {
-  background-color: rgb(1, 40, 51);
-  color:mintcream;
+  background-color: rgb(18, 18, 18);
+  color:whitesmoke;
   line-height: 1.5;
   max-width: 100vw;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
   height: 100vh;
+  padding-top: 40px;
 }
 
 select, .year-input {
@@ -19,19 +25,38 @@ select, .year-input {
 .coin-form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  align-items: center;
+  gap: 20px;
   padding: 20px 20px 40px 20px;
-  background-color: goldenrod;
-  border: 8px solid wheat;
-  width: fit-content;
-  border-radius: 10px;
+  background-color: whitesmoke;
+  /* border: 4px solid rgb(146, 146, 146); */
+  min-width: fit-content;
+  width: 200px;
+  border-radius: 28px;
   margin: 20px;
+  color: black;
+  font-size: 18px;
+  
+}
+
+.add-button {
+  padding: 8px 12px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: gray;
+  color: whitesmoke;
+  border: 2px solid gray;
+  font-size: 18px;
 }
 
 label {
   display:flex;
   flex-direction: column;
   gap: 4px;
+}
+
+h1 {
+  font-size: 16px;
 }
 
 h1, p {
@@ -41,16 +66,17 @@ h1, p {
 
 .coin {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: rgb(141, 87, 48);
-  border: 4px rgb(91, 65, 37) solid;
+  border: 4px rgb(240, 166, 87) solid;
   border-radius: 100%;
   height: 80px;
   width: 80px;
   font-size: x-small;
+  text-transform: capitalize;
 }
 
 .coin-list {
@@ -58,4 +84,52 @@ h1, p {
   flex-direction: row;
   gap: 10px;
   flex-wrap: wrap;
+  padding-left: 0;
+  width: 70vw;
+  margin-top: 20px;
+}
+
+.coin-collection {
+  max-width: 1000px;
+  margin: 0 40px;
+}
+
+.collection-header {
+  display:flex;
+  justify-content: space-between;
+}
+
+.coin-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  position: absolute;
+  background-color: rgba(255, 99, 71, 0.393);
+  color:rgb(255, 222, 222);
+  border: 2px rgb(185, 80, 80) solid;
+  border-radius: 12px;
+  padding: 6px 12px;
+}
+
+.x-button {
+  background-color: transparent;
+  border: 0;
+  color:whitesmoke;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: none;
+  font-size:16px;
+}
+
+.coin-container:hover .x-button {
+  display: block;
+}
+
+.x-button:hover {
+  color: rgb(236, 132, 114);
 }

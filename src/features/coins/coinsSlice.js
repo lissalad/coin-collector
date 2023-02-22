@@ -13,8 +13,17 @@ export const coinsSlice = createSlice({
     addCoin: (state, action) => {
       state.value.push(action.payload);
     },
+    // reset: (state) => {
+    //   state.coins
+    // }
+    removeCoin: (state, action) => {
+      console.log(state.coins);
+      const coinID = action.payload;
+      state.value.splice(coinID, 1);
+      // state.coins = state.coins.filter((coin) => coin !== coinID);
+    },
   },
 });
 
-export const { addCoin } = coinsSlice.actions;
+export const { addCoin, removeCoin } = coinsSlice.actions;
 export default coinsSlice.reducer;

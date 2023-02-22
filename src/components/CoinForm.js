@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCoin } from "../features/coins/coinsSlice";
+import uniqid from "uniqid";
 
 export default function CoinForm() {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export default function CoinForm() {
   const [mint, setMint] = useState("P");
 
   return (
-    <form className="coin-form">
+    <div className="coin-form">
       <h1>New Coin</h1>
       <label>
         Coin
@@ -31,7 +32,6 @@ export default function CoinForm() {
           step="1"
           onChange={(e) => setYear(e.target.value)}
           placeholder="2023"
-          defaultValue={2023}
           value={year}
         />
       </label>
@@ -45,9 +45,14 @@ export default function CoinForm() {
         </select>
       </label>
 
-      <button onClick={() => dispatch(addCoin({ coinType, year, mint }))}>
-        Save
+      <button
+        onClick={() =>
+          dispatch(addCoin({ coinType, year, mint, id: uniqid() }))
+        }
+        className="add-button"
+      >
+        Add to Collection
       </button>
-    </form>
+    </div>
   );
 }
