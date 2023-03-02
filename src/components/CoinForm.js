@@ -12,7 +12,7 @@ export default function CoinForm() {
 
   return (
     <div className="coin-form">
-      <h1>New Coin</h1>
+      <h1>Add a Coin</h1>
       <label>
         Coin
         <select onChange={(e) => setCoinType(e.target.value)} value={coinType}>
